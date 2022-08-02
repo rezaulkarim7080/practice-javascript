@@ -16,7 +16,9 @@
 //     console.log("Hello world");
 // }
 // hello();
+
 ///// Arrow function ///
+
 // let say = ()=>{
 //  console.log(" i am arrow function");
 
@@ -30,6 +32,8 @@
 //    Name_Age("reza",34);
 // let name = name => name;
 // console.log("karim");
+
+/////////  CLASS //////////
 
 // class Vehicles {
 //   var = "yes";
@@ -49,6 +53,17 @@
 // console.log(ocj1);
 // console.log(ocj2);
 
+////////  INHERETANCE /////////
+
+// class Vehicles {
+//   var = "yes";
+//   constructor(color, pass) {
+//     this.color = color;
+//     this.passenger = pass;
+// this.bus = "Car";
+//   }
+// }
+
 // class old_Vehicales extends Vehicles {
 //   constructor(new_wheel, color, pass) {
 //     super(color, pass);
@@ -59,10 +74,14 @@
 // console.log(ocj1);
 
 //// spread operator //
+
 // let num1 = [1, 2, 5];
 // let num2 = [4, 5, 6, 7];
 // let arr = [...num1, ...num2];
 // console.log(arr);
+
+/// object /////
+
 // let per1 = {
 //   name: "reza",
 //   roll: 132,
@@ -76,12 +95,31 @@
 // let arr = { ...per1, ...per2 };
 // console.log(arr);
 
+///// rest oprator ///
+
 // let array = (...arr) => console.log(arr);
 
 // array(1, 2, 3, 4, 5);
 
+////// function mapping ////
+
+// let num = [1, 2, 3, 4, 5, 6];
+// let squeres = num.map(function (item) {
+//   return item * item;
+// });
+// console.log(squeres);
+
+// ////   function mapping with arrow function ////
+
+// let cubes = num.map((item) => {
+//   return item ** 3;
+// });
+// console.log(cubes);
+
 let num = [1, 2, 3, 4, 5, 6];
-let squeres = num.map(function (item) {
-  return item * item;
+
+let squeres = num.map(function (res) {
+  res = num * 5;
+  return res;
 });
-console.log(squeres);
+console.log(res);
