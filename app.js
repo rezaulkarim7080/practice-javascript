@@ -116,10 +116,39 @@
 // });
 // console.log(cubes);
 
-let num = [1, 2, 3, 4, 5, 6];
+//////////  ASynCRONAS POGRAMMING /////////
 
-let squeres = num.map(function (res) {
-  res = num * 5;
-  return res;
+// console.log("line 1");
+
+// setTimeout(() => {
+//   console.log("inside setTime out!");
+// }, 3000);
+
+// console.log("line 2");
+
+// const student = getStudent(1);
+// console.log(student);
+
+// function getStudent(id) {
+//   setTimeout(() => {
+//     console.log("fething from database...");
+//     return { id: id, name: "karim" };
+//   }, 2000);
+// }
+
+//////////  CALL BACK FUNCTION FOR  ASynCRONAS POGRAMMING /////////
+
+console.log("Line Number 1");
+
+getStudent(2, (student) => {
+  console.log(student);
 });
-console.log(res);
+
+console.log("Line Number 2");
+
+function getStudent(id, callback) {
+  setTimeout(() => {
+    console.log("fething from database...");
+    callback({ id: id, name: "karim" });
+  }, 2000);
+}
