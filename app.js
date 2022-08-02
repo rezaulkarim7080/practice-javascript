@@ -155,28 +155,47 @@
 
 ///////////   Get MOTE callback functions ///////// call back nesting
 
+// console.log("Line Number 1");
+
+// getStudent(2, (student) => {
+//   console.log(student);
+//   getCorses(student, (courses) => {
+//// courses print er functoin
+//     console.log(courses);
+//   });
+// });
+
+// console.log("Line Number 2");
+
+// function getStudent(id, callback) {
+//   setTimeout(() => {
+//     console.log("fething from database...");
+//     callback({ id: id, name: "karim" });
+//   }, 2000);
+// }
+
+// function getCorses(student, callback) {
+//   setTimeout(() => {
+//     console.log("fething from database...");
+//     callback({ id: student.id, name: student.name, courses: ["javaScript", "Phyton"] });
+//   }, 2000);
+// }
+
+//////////  PROMISE ///////////
+
 console.log("Line Number 1");
 
-getStudent(2, (student) => {
-  console.log(student);
-  getCorses(student, (courses) => {
-    //// courses print er functoin
-    console.log(courses);
-  });
-});
+const p = getStudent(3);
+p.then((student) => console.log(student));
 
 console.log("Line Number 2");
 
-function getStudent(id, callback) {
-  setTimeout(() => {
-    console.log("fething from database...");
-    callback({ id: id, name: "karim" });
-  }, 2000);
-}
-
-function getCorses(student, callback) {
-  setTimeout(() => {
-    console.log("fething from database...");
-    callback({ id: student.id, name: student.name, courses: ["javaScript", "Phyton"] });
-  }, 2000);
+function getStudent(id) {
+  const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("fething from database...");
+      resolve({ id: id, name: "karim" });
+    }, 2000);
+  });
+  return p;
 }
