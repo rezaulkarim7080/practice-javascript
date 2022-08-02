@@ -31,28 +31,57 @@
 // let name = name => name;
 // console.log("karim");
 
-class Vehicles {
-  //var = "yes";
-  constructor(color, pass) {
-    this.color = color;
-    this.passenger = pass;
-    // this.bus = "Car";
-  }
-  say() {
-    console.log(this.color);
-  }
-}
+// class Vehicles {
+//   var = "yes";
+//   constructor(color, pass) {
+//     this.color = color;
+//     this.passenger = pass;
+// this.bus = "Car";
+//   }
+//   say() {
+//     console.log(this.color);
+//   }
+// }
 
 // let ocj1 = new Vehicles("red", 4);
 // let ocj2 = new Vehicles("green", 6);
 
 // console.log(ocj1);
 // console.log(ocj2);
-class old_Vehicales extends Vehicles {
-  constructor(new_wheel, color, pass) {
-    super(color, pass);
-    this.wheel = new_wheel;
-  }
-}
-let ocj1 = new old_Vehicales("Bus_wheel", "red", 9);
-console.log(ocj1);
+
+// class old_Vehicales extends Vehicles {
+//   constructor(new_wheel, color, pass) {
+//     super(color, pass);
+//     this.wheel = new_wheel;
+//   }
+// }
+// let ocj1 = new old_Vehicales("Bus_wheel", "red", 9);
+// console.log(ocj1);
+
+//// spread operator //
+// let num1 = [1, 2, 5];
+// let num2 = [4, 5, 6, 7];
+// let arr = [...num1, ...num2];
+// console.log(arr);
+// let per1 = {
+//   name: "reza",
+//   roll: 132,
+// };
+// let per2 = {
+//   city: "Chittagong",
+//   age: 43,
+//   class: "versity",
+// };
+
+// let arr = { ...per1, ...per2 };
+// console.log(arr);
+
+// let array = (...arr) => console.log(arr);
+
+// array(1, 2, 3, 4, 5);
+
+let num = [1, 2, 3, 4, 5, 6];
+let squeres = num.map(function (item) {
+  return item * item;
+});
+console.log(squeres);
