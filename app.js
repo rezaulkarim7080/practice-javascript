@@ -138,10 +138,31 @@
 
 //////////  CALL BACK FUNCTION FOR  ASynCRONAS POGRAMMING /////////
 
+// console.log("Line Number 1");
+
+// getStudent(2, (student) => {
+//   console.log(student);
+// });
+
+// console.log("Line Number 2");
+
+// function getStudent(id, callback) {
+//   setTimeout(() => {
+//     console.log("fething from database...");
+//     callback({ id: id, name: "karim" });
+//   }, 2000);
+// }
+
+///////////   Get MOTE callback functions ///////// call back nesting
+
 console.log("Line Number 1");
 
 getStudent(2, (student) => {
   console.log(student);
+  getCorses(student, (courses) => {
+    //// courses print er functoin
+    console.log(courses);
+  });
 });
 
 console.log("Line Number 2");
@@ -150,5 +171,12 @@ function getStudent(id, callback) {
   setTimeout(() => {
     console.log("fething from database...");
     callback({ id: id, name: "karim" });
+  }, 2000);
+}
+
+function getCorses(student, callback) {
+  setTimeout(() => {
+    console.log("fething from database...");
+    callback({ id: student.id, name: student.name, courses: ["javaScript", "Phyton"] });
   }, 2000);
 }
