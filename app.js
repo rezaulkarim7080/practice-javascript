@@ -32,19 +32,27 @@
 // console.log("karim");
 
 class Vehicles {
-  var = "yes";
+  //var = "yes";
   constructor(color, pass) {
     this.color = color;
     this.passenger = pass;
-    this.bus = "Car";
+    // this.bus = "Car";
   }
   say() {
     console.log(this.color);
   }
 }
 
-let ocj1 = new Vehicles("red", 4);
-let ocj2 = new Vehicles("green", 6);
+// let ocj1 = new Vehicles("red", 4);
+// let ocj2 = new Vehicles("green", 6);
 
+// console.log(ocj1);
+// console.log(ocj2);
+class old_Vehicales extends Vehicles {
+  constructor(new_wheel, color, pass) {
+    super(color, pass);
+    this.wheel = new_wheel;
+  }
+}
+let ocj1 = new old_Vehicales("Bus_wheel", "red", 9);
 console.log(ocj1);
-console.log(ocj2);
