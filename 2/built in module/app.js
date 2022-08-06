@@ -38,12 +38,26 @@
 
 /////////// transfer object one file to another //////
 
-const MyEvent = require("./myEvant");
+// const MyEvent = require("./myEvant");
 
-const myEvant = new MyEvent();
+// const myEvant = new MyEvent();
 
-myEvant.on("event1", () => {
-  console.log("Event 1 Triggerred");
+// myEvant.on("event1", () => {
+//   console.log("Event 1 Triggerred");
+// });
+
+// myEvant.function1();
+
+/////////  HTTP MODULE   /////////
+
+const http = require("http");
+
+const server = http.createServer((request, response) => {
+  if (request.url === "/") {
+    response.write(`Hello World`);
+    response.end();
+  }
 });
+server.listen(4000); /// port---like  site adddress
 
-myEvant.function1();
+console.log("listining on port 4000");
